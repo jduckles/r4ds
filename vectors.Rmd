@@ -82,10 +82,10 @@ typeof(1L)
 
 The distinction between integers and doubles is not usually important, but there are two important differences that you should be aware of:
 
-1.   Doubles are approximations. Doubles represent floating point numbers that 
-     can not always be precisely represented with a fixed amount of memory. 
-     This means that you should consider all doubles to be approximations. 
-     For example, what is square of the square root of two?
+1.  Doubles are approximations. Doubles represent floating point numbers that 
+    can not always be precisely represented with a fixed amount of memory. 
+    This means that you should consider all doubles to be approximations. 
+    For example, what is square of the square root of two?
 
     ```{r}
     x <- sqrt(2) ^ 2
@@ -225,7 +225,7 @@ An atomic vector can not have a mix of different types because the type is a pro
 
 ### Test functions
 
-Sometimes you want to do different things based on the type of vector. One option is to use `typeof()`. Another is to use a test function which returns a `TRUE` or `FALSE`. Base R provides many functions like `is.vector()` and `is.atomic()`, but they often returns surprising results. Instead, it's safer to use the `is_*` functions provided by purrr, which are summarised in the table below.
+Sometimes you want to do different things based on the type of vector. One option is to use `typeof()`. Another is to use a test function which returns a `TRUE` or `FALSE`. Base R provides many functions like `is.vector()` and `is.atomic()`, but they often return surprising results. Instead, it's safer to use the `is_*` functions provided by purrr, which are summarised in the table below.
 
 |                  | lgl | int | dbl | chr | list |
 |------------------|-----|-----|-----|-----|------|

@@ -128,7 +128,7 @@ knitr::include_graphics("screenshots/rstudio-env.png")
 
 Here you can see all of the objects that you've created.
 
-## Practice
+## Exercises
 
 1.  Why does this code not work?
 
@@ -146,7 +146,7 @@ Here you can see all of the objects that you've created.
     ```{r, eval = FALSE}
     library(tidyverse)
 
-    ggplot(data = mpg) + 
+    ggplot(dota = mpg) + 
       geom_point(mapping = aes(x = displ, y = hwy))
     
     fliter(mpg, cyl = 8)

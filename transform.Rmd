@@ -125,7 +125,7 @@ The following code finds all flights that departed in November or December:
 filter(flights, month == 11 | month == 12)
 ```
 
-The order of operations doesn't work like English. You can't write `filter(flights, month == 11 | 12)`, which you might literally translate into  "finds all flights that departed in November or December". Instead it finds all months that equal `11 | 12`, an expression that evaluates to `TRUE`. In a numeric context (like here), `TRUE` becomes one, so this finds all flights in January, not November or December. This is quite confusing!
+The order of operations doesn't work like English. You can't write `filter(flights, month == (11 | 12))`, which you might literally translate into  "finds all flights that departed in November or December". Instead it finds all months that equal `11 | 12`, an expression that evaluates to `TRUE`. In a numeric context (like here), `TRUE` becomes one, so this finds all flights in January, not November or December. This is quite confusing!
 
 A useful short-hand for this problem is `x %in% y`. This will select every row where `x` is one of the values in `y`. We could use it to rewrite the code above:
 
@@ -242,9 +242,9 @@ arrange(df, desc(x))
 1.  Sort `flights` to find the most delayed flights. Find the flights that
     left earliest.
 
-1.  Sort `flights` to find the fastest flights.
+1.  Sort `flights` to find the fastest (highest speed) flights.
 
-1.  Which flights travelled the longest? Which travelled the shortest?
+1.  Which flights travelled the farthest? Which travelled the shortest?
 
 ## Select columns with `select()` {#select}
 
@@ -410,7 +410,7 @@ There are many functions for creating new variables that you can use with `mutat
     cummean(x)
     ```
 
-*   Logical comparisons, `<`, `<=`, `>`, `>=`, `!=`, which you learned about
+*   Logical comparisons, `<`, `<=`, `>`, `>=`, `!=`, and `==`, which you learned about
     earlier. If you're doing a complex sequence of logical operations it's 
     often a good idea to store the interim values in new variables so you can
     check that each step is working as expected.
@@ -558,7 +558,7 @@ flights %>%
   summarise(mean = mean(dep_delay, na.rm = TRUE))
 ```
 
-In this case, where missing values represent cancelled flights, we could also tackle the problem by first removing the cancelled flights. We'll save this dataset so we can reuse in the next few examples.
+In this case, where missing values represent cancelled flights, we could also tackle the problem by first removing the cancelled flights. We'll save this dataset so we can reuse it in the next few examples.
 
 ```{r}
 not_cancelled <- flights %>% 
@@ -677,8 +677,8 @@ Just using means, counts, and sum can get you a long way, but R provides many ot
     ```
 
 *   Measures of spread: `sd(x)`, `IQR(x)`, `mad(x)`. The root mean squared deviation,
-    or standard deviation or sd for short, is the standard measure of spread.
-    The interquartile range `IQR()` and median absolute deviation `mad(x)`
+    or standard deviation `sd(x)`, is the standard measure of spread.
+    The interquartile range `IQR(x)` and median absolute deviation `mad(x)`
     are robust equivalents that may be more useful if you have outliers.
     
     ```{r}
@@ -773,7 +773,7 @@ Just using means, counts, and sum can get you a long way, but R provides many ot
     # What proportion of flights are delayed by more than an hour?
     not_cancelled %>% 
       group_by(year, month, day) %>% 
-      summarise(hour_perc = mean(arr_delay > 60))
+      summarise(hour_prop = mean(arr_delay > 60))
     ```
 
 ### Grouping by multiple variables
@@ -887,7 +887,7 @@ Functions that work most naturally in grouped mutates and filters are known as  
     
 1.  Look at each destination. Can you find flights that are suspiciously
     fast? (i.e. flights that represent a potential data entry error). Compute
-    the air time a flight relative to the shortest flight to that destination.
+    the air time of a flight relative to the shortest flight to that destination.
     Which flights were most delayed in the air?
     
 1.  Find all destinations that are flown by at least two carriers. Use that

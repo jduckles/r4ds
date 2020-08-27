@@ -6,11 +6,10 @@ This chapter introduces you to string manipulation in R. You'll learn the basics
 
 ### Prerequisites
 
-This chapter will focus on the __stringr__ package for string manipulation. stringr is not part of the core tidyverse because you don't always have textual data, so we need to load it explicitly.
+This chapter will focus on the __stringr__ package for string manipulation, which is part of the core tidyverse.
 
 ```{r setup, message = FALSE}
 library(tidyverse)
-library(stringr)
 ```
 
 ## String basics
@@ -579,7 +578,7 @@ df <- tibble(
   i = seq_along(word)
 )
 df %>% 
-  filter(str_detect(words, "x$"))
+  filter(str_detect(word, "x$"))
 ```
 
 
@@ -612,7 +611,7 @@ str_view_all("abababa", "aba")
 
 Note the use of `str_view_all()`. As you'll shortly learn, many stringr functions come in pairs: one function works with a single match, and the other works with all matches. The second function will have the suffix `_all`.
 
-### Exercises
+#### Exercises
 
 1.  For each of the following challenges, try solving it by using both a single
     regular expression, and a combination of multiple `str_detect()` calls.

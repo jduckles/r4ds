@@ -16,8 +16,8 @@ It's a challenge to know when to stop. You need to figure out when your model is
 > in life, I heard "A poor seamstress makes many mistakes. A good seamstress 
 > works hard to correct those mistakes. A great seamstress isn't afraid to 
 > throw out the garment and start over."
-
--- Broseidon241, <https://www.reddit.com/r/datascience/comments/4irajq>
+> 
+> -- Broseidon241, <https://www.reddit.com/r/datascience/comments/4irajq>
 
 ### Prerequisites
 
@@ -449,7 +449,7 @@ We have only scratched the absolute surface of modelling, but you have hopefully
 These modelling chapters are even more opinionated than the rest of the book. I approach modelling from a somewhat different perspective to most others, and there is relatively little space devoted to it. Modelling really deserves a book on its own, so I'd highly recommend that you read at least one of these three books:
 
 * *Statistical Modeling: A Fresh Approach* by Danny Kaplan,
-  <http://www.mosaic-web.org/go/StatisticalModeling/>. This book provides 
+  <http://project-mosaic-books.com/?page_id=13>. This book provides 
   a gentle introduction to modelling, where you build your intuition,
   mathematical tools, and R skills in parallel. The book replaces a traditional
   "introduction to statistics" course, providing a curriculum that is up-to-date 
@@ -461,7 +461,7 @@ These modelling chapters are even more opinionated than the rest of the book. I 
   techniques collectively known as statistical learning.  For an even deeper
   understanding of the math behind the models, read the classic 
   *Elements of Statistical Learning* by Trevor Hastie, Robert Tibshirani, and
-  Jerome Friedman, <http://statweb.stanford.edu/~tibs/ElemStatLearn/> (also
+  Jerome Friedman, <https://web.stanford.edu/~hastie/Papers/ESLII.pdf> (also
   available online for free).
 
 * *Applied Predictive Modeling* by Max Kuhn and Kjell Johnson, 

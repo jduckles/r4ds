@@ -357,7 +357,7 @@ ggplot(diamonds, aes(carat, price)) +
   scale_y_log10()
 ```
 
-Another scale that is frequently customised is colour.The default categorical scale picks colours that are evenly spaced around the colour wheel. Useful alternatives are the ColorBrewer scales which have been hand tuned to work better for people with common types of colour blindness. The two plots below look similar, but there is enough difference in the shades of red and green that the dots on the right can be distinguished even by people with red-green colour blindness.
+Another scale that is frequently customised is colour. The default categorical scale picks colours that are evenly spaced around the colour wheel. Useful alternatives are the ColorBrewer scales which have been hand tuned to work better for people with common types of colour blindness. The two plots below look similar, but there is enough difference in the shades of red and green that the dots on the right can be distinguished even by people with red-green colour blindness.
 
 ```{r, fig.align = "default", out.width = "50%"}
 ggplot(mpg, aes(displ, hwy)) +
@@ -550,7 +550,7 @@ I only ever use three of the five options:
   adjust `fig.asp`.
 
 * I control the output size with `out.width` and set it to a percentage
-  of the line width). I default to `out.width = "70%"`
+  of the line width. I default to `out.width = "70%"`
   and `fig.align = "center"`. That give plots room to breathe, without taking
   up too much space.
 
@@ -591,4 +591,4 @@ It's a good idea to name code chunks that produce figures, even if you don't rou
 
 The absolute best place to learn more is the ggplot2 book: [_ggplot2: Elegant graphics for data analysis_](https://amzn.com/331924275X). It goes into much more depth about the underlying theory, and has many more examples of how to combine the individual pieces to solve practical problems. Unfortunately, the book is not available online for free, although you can find the source code at <https://github.com/hadley/ggplot2-book>.
 
-Another great resource is the ggplot2 extensions guide <http://www.ggplot2-exts.org/>. This site lists many of the packages that extend ggplot2 with new geoms and scales. It's a great place to start if you're trying to do something that seems hard with ggplot2.
+Another great resource is the ggplot2 extensions gallery <https://exts.ggplot2.tidyverse.org/gallery/>. This site lists many of the packages that extend ggplot2 with new geoms and scales. It's a great place to start if you're trying to do something that seems hard with ggplot2.
